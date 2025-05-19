@@ -85,7 +85,7 @@ npm start
 ### 🔹 Encurtar URL
 
 ```http
-POST /api/url/shorten
+POST /shorten
 Content-Type: application/json
 
 {
