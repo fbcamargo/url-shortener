@@ -97,13 +97,12 @@ Content-Type: application/json
 **Resposta:**
 ```json
 {
-    "_id": "123a1234cb0f0fd75efce2cb",
+    "id": "123a1234cb0f0fd75efce2cb",
     "originalUrl": "https://www.exemplo.com",
     "shortId": "abc123",
     "clicks": 0,
     "createdAt": "2025-05-18T21:50:46.278Z",
-    "expiresAt": "2025-05-19T21:50:46.277Z",
-    "__v": 0
+    "expiresAt": "2025-05-19T21:50:46.277Z"
 }
 ```
 
