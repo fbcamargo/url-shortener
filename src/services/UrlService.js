@@ -7,8 +7,8 @@ class UrlService {
         return this.urlRepository.getByShortId(shortId);
     }
 
-    async createOrRenew(longUrl) {
-        return this.urlRepository.createOrRenew(longUrl);
+    async createOrRenew(createUrlDto) {
+        return this.urlRepository.createOrRenew(createUrlDto);
     }
 }
 
