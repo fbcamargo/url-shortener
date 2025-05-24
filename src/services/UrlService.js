@@ -1,4 +1,5 @@
 const { nanoid } = require("nanoid");
+const StoreUrlDto = require("../dtos/StoreUrlDto.js");
 
 class UrlService {
     constructor(urlRepository) {
@@ -14,12 +15,11 @@ class UrlService {
         const isExpired = existing && existing.expiresAt <= Date.now();
 
         if (!existing || isExpired) {
-            return this.urlRepository.create({
+            return this.urlRepository.create(StoreUrlDto.parse({
                 originalUrl: createUrlDto.url,
                 shortId: this.#generateShortId(5, 10),
                 expiresAt: this.#getExpirationDate(),
-                clicks: 0
-            });
+            }));
         }
         return existing;
     }
@@ -31,7 +31,7 @@ class UrlService {
 
     #getExpirationDate() {
         const now = new Date();
-        return now.setHours(now.getHours() + 24);
+        return new Date(now.setHours(now.getHours() + 24));
     }
 }
 

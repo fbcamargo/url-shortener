@@ -11,8 +11,8 @@ class MongooseUrlRepository {
         return Url.findOne({ originalUrl: url }).sort({ _id: -1 });
     }
 
-    async create(data) {
-        return Url.create(data);
+    async create(storeUrlDto) {
+        return Url.create(storeUrlDto);
     }
 }
 
